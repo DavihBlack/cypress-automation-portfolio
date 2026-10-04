@@ -1,0 +1,14 @@
+# Dependencies
+node_modules/
+
+# Cypress
+cypress/screenshots/
+cypress/videos/
+cypress/downloads/
+
+# macOS
+.DS_Store
+
+# Environment variables
+.env
+.env.*

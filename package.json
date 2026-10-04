@@ -1,0 +1,18 @@
+{
+  "name": "qa-automation-portfolio",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+  "cy:open": "cypress open",
+  "cy:run": "cypress run --browser chrome",
+  "cy:run:regression": "cypress run --browser chrome --spec \"cypress/e2e/saucedemo/login.cy.js,cypress/e2e/saucedemo/products.cy.js,cypress/e2e/saucedemo/cart.cy.js,cypress/e2e/saucedemo/checkout.cy.js\"",
+  "cy:run:known-issue": "cypress run --browser chrome --spec \"cypress/e2e/saucedemo/known-issues/visual-user.cy.js\""
+},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "cypress": "^16.1.1"
+  }
+}
