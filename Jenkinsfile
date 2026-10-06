@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    tools {
+    nodejs 'NodeJS 22'
+    }
+
     stages {
         stage('Install Dependencies') {
             steps {
@@ -24,4 +28,6 @@ pipeline {
             echo 'Cypress regression suite failed. Review the test results.'
         }
     }
+
+    
 }
