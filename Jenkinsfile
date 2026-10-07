@@ -5,6 +5,11 @@ pipeline {
     nodejs 'NodeJS 22'
     }
 
+    triggers {
+        pollSCM('H/5 * * * *')
+        cron('H 8 * * 1-5')
+    }
+
     stages {
         stage('Install Dependencies') {
             steps {
