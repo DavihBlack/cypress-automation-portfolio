@@ -6,7 +6,7 @@
   "cy:open": "cypress open",
   "cy:run": "cypress run --browser chrome",
   "cy:run:regression": "cypress run --browser chrome --spec \"cypress/e2e/saucedemo/login.cy.js,cypress/e2e/saucedemo/products.cy.js,cypress/e2e/saucedemo/cart.cy.js,cypress/e2e/saucedemo/checkout.cy.js\"",
-  "cy:run:known-issue": "cypress run --browser chrome --spec \"cypress/e2e/saucedemo/known-issues/visual-user.cy.js\""
+  "cy:run:known-issue": "cypress run --browser chrome --spec \"cypress/e2e/saucedemo/known-issues/visual-user.cy.js\"",
   "cy:run:regression:ci": "cypress run --browser chrome --spec \"cypress/e2e/saucedemo/login.cy.js,cypress/e2e/saucedemo/products.cy.js,cypress/e2e/saucedemo/cart.cy.js,cypress/e2e/saucedemo/checkout.cy.js\" --reporter junit --reporter-options \"mochaFile=reports/junit-[hash].xml\""
 },
   "keywords": [],
