@@ -40,6 +40,9 @@ This project demonstrates:
 | Browser | Google Chrome |
 | Development | Visual Studio Code |
 | Version Control | Git / GitHub |
+| CI/CD | Jenkins |
+| Test Reporting | JUnit |
+
 
 ---
 
@@ -136,6 +139,7 @@ Its purpose is to demonstrate that an automated check should not only verify exp
 ```text
 cypress-automation-portfolio/
 │
+├── Jenkinsfile
 ├── cypress/
 │   ├── e2e/
 │   │   └── saucedemo/
@@ -249,6 +253,41 @@ Runs all Cypress specs.
 
 > The full execution also includes the isolated known-issue scenario and will therefore report its intentional failure while the application defect remains present.
 
+## CI/CD Integration
+
+The Cypress regression suite is integrated with **Jenkins** using a version-controlled `Jenkinsfile`.
+
+The pipeline automatically:
+
+1. Retrieves the latest project version from the Git repository
+2. Provisions the configured Node.js environment
+3. Installs project dependencies using `npm ci`
+4. Executes the Cypress regression suite in Chrome
+5. Generates JUnit test results
+6. Publishes the results in Jenkins
+7. Reports the pipeline as successful or failed based on the regression outcome
+
+The main CI regression command is:
+
+```bash
+npm run cy:run:regression:ci
+
+```
+
+The pipeline keeps the intentional `visual_user` known-issue scenario separate from the main regression suite, ensuring that expected demonstration failures do not affect the CI regression result.
+
+### Automated Execution
+
+The Jenkins pipeline can run automatically based on source control changes and scheduled regression runs.
+
+This reflects a typical CI workflow where automated regression tests provide fast feedback after changes.
+
+### Test Reporting
+
+Cypress generates **JUnit XML reports**, which Jenkins processes and displays as test results for each build.
+
+Generated report files are treated as temporary execution artifacts and are excluded from source control.
+
 ---
 
 ## Automation Approach
@@ -283,11 +322,12 @@ Implemented:
 - Centralized test data using fixtures
 - Headless regression execution
 - Isolated known-issue detection
+- Jenkins CI pipeline
+- Automated regression execution
+- JUnit test reporting
 
 Planned:
 
-- CI/CD integration
-- Automated execution reporting
 - Additional browser execution where valuable
 - Extended regression coverage where justified
 
