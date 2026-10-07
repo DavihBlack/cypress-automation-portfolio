@@ -19,12 +19,16 @@ pipeline {
 
         stage('Run Cypress Regression') {
             steps {
-                sh 'npm run cy:run:regression'
+                sh 'npm run cy:run:regression:ci'
             }
         }
     }
 
     post {
+        always {
+        junit testResults: 'reports/*.xml', allowEmptyResults: true
+        }
+
         success {
             echo 'Cypress regression suite passed successfully.'
         }
