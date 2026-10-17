@@ -139,7 +139,6 @@ Its purpose is to demonstrate that an automated check should not only verify exp
 ```text
 cypress-automation-portfolio/
 │
-├── Jenkinsfile
 ├── cypress/
 │   ├── e2e/
 │   │   └── saucedemo/
@@ -158,10 +157,16 @@ cypress-automation-portfolio/
 │       ├── commands.js
 │       └── e2e.js
 │
+├── media/
+│   ├── automated-checkout-validation.mp4
+│   ├── automated-issue-detection.mp4
+│   └── automated-regression-pipeline.mp4
+│
 ├── .gitignore
 ├── cypress.config.js
-├── package.json
+├── Jenkinsfile
 ├── package-lock.json
+├── package.json
 └── README.md
 
 ```
@@ -287,6 +292,28 @@ This reflects a typical CI workflow where automated regression tests provide fas
 Cypress generates **JUnit XML reports**, which Jenkins processes and displays as test results for each build.
 
 Generated report files are treated as temporary execution artifacts and are excluded from source control.
+
+---
+
+## Demo Videos
+
+### Automated Checkout Validation
+
+Demonstrates an automated end-to-end customer journey covering login, product selection, cart, checkout information, order totals and successful order completion.
+
+[▶ View Automated Checkout Validation](./media/automated-checkout-validation.mp4)
+
+### Automated Issue Detection
+
+Demonstrates how an automated consistency check detects a real price mismatch between the Product Listing Page and Product Detail Page.
+
+[▶ View Automated Issue Detection](./media/automated-issue-detection.mp4)
+
+### Automated Regression Pipeline
+
+Demonstrates the Cypress regression suite running through Jenkins CI, including automated execution and test result reporting.
+
+[▶ View Jenkins Regression Pipeline](./media/automated-regression-pipeline.mp4)
 
 ---
 
